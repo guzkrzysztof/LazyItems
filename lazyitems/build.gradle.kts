@@ -24,20 +24,25 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 dependencies {
+    // AndroidX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.paging.compose.android)
+
+    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -50,7 +55,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.guzkrzysztof"
                 artifactId = "lazyitems"
-                version = "1.0.0"
+                version = "1.0.3"
             }
         }
     }
